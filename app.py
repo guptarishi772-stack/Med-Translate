@@ -1,4 +1,5 @@
 import streamlit as st
+import time
 from med_translate import translate_medical_report
 
 st.title("Med-Translate")
@@ -26,7 +27,7 @@ with right_col:
     if uploaded_file:
         if st.button("Translate Report"):
             with st.spinner("AI is analyzing the medical jargon... Please wait."):
-                
+                time.sleep(2)
                 with open("temp.pdf", "wb") as f:
                     f.write(uploaded_file.getvalue())
                 
