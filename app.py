@@ -25,9 +25,10 @@ with right_col:
 
     if uploaded_file:
         if st.button("Translate Report"):
-            with open("temp.pdf", "wb") as f:
-                f.write(uploaded_file.getvalue())
-
-    
-            result = translate_medical_report(api_key, "temp.pdf") 
-            st.write(result)   
+            with st.spinner("AI is analyzing the medical jargon... Please wait."):
+                
+                with open("temp.pdf", "wb") as f:
+                    f.write(uploaded_file.getvalue())
+                
+                result = translate_medical_report(api_key, "temp.pdf")
+                st.write(result)
