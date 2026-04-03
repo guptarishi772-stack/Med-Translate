@@ -3,6 +3,17 @@ from med_translate import translate_medical_report
 
 st.title("Med-Translate")
 
+# to hide streamlit icons:-
+hide_st_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            header {visibility: hidden;}
+            </style>
+            """
+st.markdown(hide_st_style, unsafe_allow_html=True)
+# Till here.
+
 left_col, right_col = st.columns([1, 2])
 
 with left_col:
